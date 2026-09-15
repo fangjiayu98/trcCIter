@@ -1,0 +1,15 @@
+nohup: ignoring input
+training Toronto
+   city            model     n  prevalence       AP    Brier      ECE  Capture20   NDCG20  Spearman  MAE_log  RMSE_log   R2_log  Pearson
+Toronto citer_moe_detect 25534    0.175766 0.636033 0.104067 0.059814   0.623696 0.585180  0.537832      NaN       NaN      NaN      NaN
+Toronto citer_moe_burden 25534    0.175766 0.545954 0.114830 0.043300   0.551476 0.563025  0.585238 1.407551  1.955543 0.354681 0.598063
+Toronto   citer_moe_rank 25534    0.175766 0.574558 0.112334 0.051813   0.572713 0.580186  0.596534      NaN       NaN      NaN      NaN
+Toronto  citer_moe_stack 25534    0.175766 0.631435 0.111218 0.079488   0.623996 0.633399  0.527386      NaN       NaN      NaN      NaN
+saved results/checkpoint_run/citer_moe/checkpoints/toronto.pt, results/checkpoint_run/citer_moe/checkpoints/toronto_calibrators.joblib, and results/checkpoint_run/citer_moe/checkpoints/toronto_features.parquet
+training New York
+    city            model    n  prevalence       AP    Brier      ECE  Capture20   NDCG20  Spearman  MAE_log  RMSE_log   R2_log  Pearson
+New York citer_moe_detect 5875    0.099404 0.588114 0.072032 0.058459   0.658464 0.605474  0.673083      NaN       NaN      NaN      NaN
+New York citer_moe_burden 5875    0.099404 0.584400 0.061578 0.027083   0.660865 0.626685  0.754333 1.049058  1.329625 0.515656 0.743749
+New York   citer_moe_rank 5875    0.099404 0.585870 0.073335 0.069101   0.666659 0.632318  0.769069      NaN       NaN      NaN      NaN
+New York  citer_moe_stack 5875    0.099404 0.621103 0.057361 0.009695   0.673162 0.615847  0.802132      NaN       NaN      NaN      NaN
+saved results/checkpoint_run/citer_moe/checkpoints/new_york.pt, results/checkpoint_run/citer_moe/checkpoints/new_york_calibrators.joblib, and results/checkpoint_run/citer_moe/checkpoints/new_york_features.parquet

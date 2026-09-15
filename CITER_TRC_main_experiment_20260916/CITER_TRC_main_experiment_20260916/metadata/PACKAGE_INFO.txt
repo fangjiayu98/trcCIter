@@ -1,0 +1,5 @@
+package=CITER_TRC_main_experiment_20260916
+created_utc=2026-09-15T14:17:16Z
+scope=main experiment only
+file_count=39
+size_bytes=66497011

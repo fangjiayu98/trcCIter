@@ -1,0 +1,13 @@
+city,expert,mean_gate_calibration,mean_gate_test
+Toronto,native_catboost,0.41749123,0.41913745
+Toronto,finetuned_minilm,0.0073344037,0.0077279545
+Toronto,conditional_survival,0.41534954,0.42369065
+Toronto,direct_exposure_lgbm,0.05383591,0.055447243
+Toronto,exposure_lambdamart,0.002614251,0.0029657655
+Toronto,extra_trees,0.10337557,0.09102849
+New York,native_catboost,0.347944,0.39810562
+New York,finetuned_minilm,0.08735092,0.07385254
+New York,mtdnn_survival,0.16152935,0.17384584
+New York,direct_exposure_lgbm,0.109149896,0.093168855
+New York,exposure_lambdamart,0.18536031,0.16921334
+New York,extra_trees,0.10866545,0.09181397

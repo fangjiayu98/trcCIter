@@ -1,0 +1,18 @@
+timestamp_utc=2026-09-15T14:17:13.230874+00:00
+command=verify-main
+python=3.12.3
+platform=Linux-5.4.0-144-generic-x86_64-with-glibc2.35
+torch=2.8.0+cu128
+sklearn=1.9.1
+device=cpu
+sha256 5de97b9c599fa9f3513ac7f335d2d4904a7d460fffc20f414f3d098c62e599f3 results/trc_v4/sota_models/predictions.parquet
+sha256 87900f4cf3b8811857ef198061514e0936daab1e445a3a847a7a4fff35933784 results/trc_v4/sota_models/metrics.csv
+PASS metrics Toronto citer_moe_detect
+PASS metrics Toronto citer_moe_burden
+PASS metrics Toronto citer_moe_rank
+PASS metrics Toronto citer_moe_stack
+PASS metrics New York citer_moe_detect
+PASS metrics New York citer_moe_burden
+PASS metrics New York citer_moe_rank
+PASS metrics New York citer_moe_stack
+PASS main experiment: all 8 city-task rows reproduce from event-level predictions
