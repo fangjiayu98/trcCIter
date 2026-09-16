@@ -1,0 +1,8 @@
+run_id=CITER_TRC_PAPER_RUN_20260916_GPU01
+completed_utc=2026-09-15T16:03:53Z
+main_table_audit=PASS_18_OF_18
+toronto_replay_max_abs=3.5762786865234375e-07
+new_york_replay_max_abs=1.7881393432617188e-07
+seed_base=20260915
+seed_replicates=5
+bootstrap_replicates=600

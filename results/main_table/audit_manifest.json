@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "rows": 18,
+  "fully_matching_rows": 18,
+  "input_sha256": {
+    "toronto": "26ceeea2884d003ca50e7bc0de438ae28f650e0ed750643d2253d0f6dac5713a",
+    "new_york": "608118d79193b6c20711be891b1877b02fb5f65f1eccbbb6e988e7b08a17ca32",
+    "moe": "3fbde16d9750efa858a7a5eb982ed42b315affd740b53852e01b70f9aa585aa5"
+  },
+  "metric_contract": {
+    "AP": "sklearn.metrics.average_precision_score",
+    "Brier": "sklearn.metrics.brier_score_loss",
+    "ECE": "10 equal-width probability bins",
+    "NDCG": "raw burden relevance at top ceil(0.20*n), stable descending sort"
+  }
+}

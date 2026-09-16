@@ -1,0 +1,129 @@
+nohup: ignoring input
+[2026-09-15T15:08:13Z] RUN_START
+NVIDIA GeForce RTX 3080 Ti, 12288 MiB, 595.71.05
+[2026-09-15T15:08:13Z] TORONTO_EXPERTS_START
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 8708.54it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.37it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.37it/s]
+fit general model=fused_logistic
+fit general model=random_forest
+fit general model=extra_trees
+fit general model=hist_gradient_boosting
+fit general model=lightgbm
+/root/autodl-tmp/rail2road/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+fit general model=catboost
+fit general model=mlp
+fit general model=xgboost
+fit native categorical CatBoost
+fit BTM-LightGBM duration baseline
+  0%|          | 0/165 [00:00<?, ?it/s]100%|██████████| 165/165 [00:00<00:00, 73110.10it/s]
+/root/autodl-tmp/rail2road/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+fit Weibull AFT duration baseline
+/root/autodl-tmp/rail2road/.venv/lib/python3.12/site-packages/lifelines/fitters/__init__.py:2090: ApproximationWarning: The Hessian was not invertible. We will instead approximate it using the pseudo-inverse.
+
+It's advisable to not trust the variances reported, and to be suspicious of the fitted parameters too.
+
+Some ways to possible ways fix this:
+
+0. Are there any lifelines warnings outputted during the `fit`?
+1. Does a particularly large variable need to be centered to 0?
+2. Inspect your DataFrame: does everything look as expected? Do you need to add/drop a constant (intercept) column?
+3. Is there high-collinearity in the dataset? Try using the variance inflation factor (VIF) to find redundant variables.
+4. Trying adding a small penalizer (or changing it, if already present). Example: `WeibullAFTFitter(penalizer=0.01).fit(...)`.
+5. Are there any extreme outliers? Try modeling them or dropping them to see if it helps convergence.
+
+  warnings.warn(warning_text, exceptions.ApproximationWarning)
+/root/autodl-tmp/rail2road/.venv/lib/python3.12/site-packages/lifelines/fitters/__init__.py:2101: StatisticalWarning: The diagonal of the variance_matrix_ has negative values. This could be a problem with WeibullAFTFitter's fit to the data.
+
+It's advisable to not trust the variances reported, and to be suspicious of the fitted parameters too.
+
+  warnings.warn(warning_text, exceptions.StatisticalWarning)
+fit MTDNN survival baseline
+mtdnn epoch=1 val_loss=0.650859
+mtdnn epoch=2 val_loss=0.570708
+mtdnn epoch=3 val_loss=0.549813
+mtdnn epoch=4 val_loss=0.545674
+mtdnn epoch=5 val_loss=0.543950
+mtdnn epoch=6 val_loss=0.538910
+mtdnn epoch=7 val_loss=0.538603
+mtdnn epoch=8 val_loss=0.538420
+mtdnn epoch=9 val_loss=0.532832
+mtdnn epoch=10 val_loss=0.533518
+mtdnn epoch=11 val_loss=0.533844
+mtdnn epoch=12 val_loss=0.537966
+mtdnn epoch=13 val_loss=0.537179
+mtdnn epoch=14 val_loss=0.542521
+fit fine-tuned MiniLM
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 5997.77it/s]
+minilm epoch=1 validation_ap_sum=1.070897
+minilm epoch=2 validation_ap_sum=1.077435
+minilm epoch=3 validation_ap_sum=1.090209
+fit monotone conditional-survival model
+/root/autodl-tmp/rail2road/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+fit continuous exposure regression
+/root/autodl-tmp/rail2road/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+fit exposure-aware LambdaMART
+/root/autodl-tmp/rail2road/.venv/lib/python3.12/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+select validation-locked CITER risk score
+          split           target                  model     n  prevalence       ap      auc    brier  log_loss    ece10  top20_recall  top20_burden_capture   ndcg20  fit_seconds
+      test_2024 high_exposure_v2   conditional_survival 25534    0.175766 0.611992 0.872011 0.103538  0.334289 0.035641      0.587121              0.620089 0.609438   112.506297
+      test_2024 high_exposure_v2 citer_dynamic_exposure 25534    0.175766 0.608993 0.870255 0.102162  0.319015 0.024621      0.591578              0.615519 0.606239     0.000000
+      test_2024 high_exposure_v2               catboost 25534    0.175766 0.591304 0.866251 0.105374  0.329436 0.030269      0.574643              0.623177 0.580192    20.343606
+      test_2024 high_exposure_v2       finetuned_minilm 25534    0.175766 0.590128 0.863882 0.105321  0.331282 0.026546      0.573975              0.627037 0.578866    60.949930
+      test_2024 high_exposure_v2        native_catboost 25534    0.175766 0.589675 0.863799 0.106023  0.333412 0.034288      0.566845              0.616042 0.589827    60.946440
+      test_2024 high_exposure_v2 hist_gradient_boosting 25534    0.175766 0.587023 0.865393 0.105527  0.330467 0.028518      0.573975              0.620623 0.577854     4.291344
+      test_2024 high_exposure_v2                xgboost 25534    0.175766 0.586177 0.863451 0.106240  0.334404 0.028431      0.571524              0.617083 0.573065     4.134841
+      test_2024 high_exposure_v2               lightgbm 25534    0.175766 0.578544 0.863636 0.109461  0.335474 0.030483      0.571078              0.621477 0.565348     3.622305
+      test_2024 high_exposure_v2          random_forest 25534    0.175766 0.577911 0.861612 0.106826  0.336688 0.024066      0.570633              0.620051 0.580465    13.750844
+      test_2024 high_exposure_v2                    mlp 25534    0.175766 0.568752 0.859363 0.107315  0.336915 0.018328      0.572861              0.619965 0.573574    20.068555
+      test_2024 high_exposure_v2            extra_trees 25534    0.175766 0.556459 0.854573 0.108395  0.339593 0.022995      0.557709              0.616821 0.616548    13.188841
+      test_2024 high_exposure_v2      btm_lgbm_duration 25534    0.175766 0.546358 0.823676 0.111129  0.364135 0.025164      0.561720              0.605806 0.614930     4.426625
+      test_2024 high_exposure_v2   direct_exposure_lgbm 25534    0.175766 0.520086 0.801636 0.116805  0.391531 0.031650      0.490642              0.532836 0.550386     5.338577
+      test_2024 high_exposure_v2    exposure_lambdamart 25534    0.175766 0.494845 0.844297 0.113593  0.350114 0.035406      0.542781              0.621186 0.602463     6.731214
+      test_2024 high_exposure_v2         fused_logistic 25534    0.175766 0.488047 0.838766 0.114018  0.352073 0.018497      0.517602              0.594005 0.571895     4.846205
+      test_2024 high_exposure_v2            weibull_aft 25534    0.175766 0.411391 0.777137 0.124292  0.396624 0.021028      0.469474              0.544697 0.495527    13.739927
+      test_2024 high_exposure_v2         mtdnn_survival 25534    0.175766 0.372471 0.806707 0.121951  0.374137 0.041905      0.483512              0.562443 0.474603    23.654067
+      test_2024 high_exposure_v2                  prior 25534    0.175766 0.175766 0.500000 0.144939  0.465149 0.008187      0.216132              0.202734 0.170284     0.000000
+validation_2023 high_exposure_v2 citer_dynamic_exposure 22109    0.167579 0.621506 0.873034 0.097120  0.307607 0.027802      0.608907              0.640451 0.559017     0.000000
+validation_2023 high_exposure_v2   conditional_survival 22109    0.167579 0.617710 0.872107 0.097086  0.306304 0.029197      0.595412              0.643358 0.564732   112.506297
+validation_2023 high_exposure_v2               catboost 22109    0.167579 0.604798 0.868257 0.158472  0.465632 0.187206      0.586775              0.645188 0.519501    20.343606
+validation_2023 high_exposure_v2       finetuned_minilm 22109    0.167579 0.601575 0.864681 0.160629  0.473564 0.192253      0.587584              0.648469 0.532982    60.949930
+validation_2023 high_exposure_v2        native_catboost 22109    0.167579 0.601088 0.867379 0.152301  0.448358 0.170169      0.584885              0.640609 0.588513    60.946440
+validation_2023 high_exposure_v2 hist_gradient_boosting 22109    0.167579 0.598224 0.867046 0.160190  0.470072 0.187917      0.586505              0.642178 0.515264     4.291344
+validation_2023 high_exposure_v2                xgboost 22109    0.167579 0.594553 0.864953 0.147977  0.437021 0.156815      0.587584              0.645608 0.518132     4.134841
+validation_2023 high_exposure_v2               lightgbm 22109    0.167579 0.591741 0.864813 0.309313  0.970722 0.390469      0.582726              0.642490 0.509593     3.622305
+validation_2023 high_exposure_v2          random_forest 22109    0.167579 0.587216 0.861655 0.132256  0.395391 0.127051      0.580567              0.641787 0.534519    13.750844
+validation_2023 high_exposure_v2                    mlp 22109    0.167579 0.578755 0.861852 0.170232  0.502133 0.197133      0.586775              0.639456 0.505637    20.068555
+validation_2023 high_exposure_v2            extra_trees 22109    0.167579 0.571838 0.858843 0.139568  0.413924 0.152808      0.574899              0.639623 0.548180    13.188841
+validation_2023 high_exposure_v2      btm_lgbm_duration 22109    0.167579 0.551498 0.821947 0.106607  0.353222 0.027195      0.552767              0.590462 0.507740     4.426625
+validation_2023 high_exposure_v2   direct_exposure_lgbm 22109    0.167579 0.549819 0.817264 0.107399  0.367475 0.032467      0.531444              0.588921 0.522150     5.338577
+validation_2023 high_exposure_v2    exposure_lambdamart 22109    0.167579 0.502717 0.845735 0.108065  0.337750 0.027764      0.560324              0.643023 0.567644     6.731214
+validation_2023 high_exposure_v2         fused_logistic 22109    0.167579 0.486573 0.841513 0.180115  0.532784 0.215105      0.536842              0.612190 0.515963     4.846205
+validation_2023 high_exposure_v2            weibull_aft 22109    0.167579 0.394125 0.775542 0.120525  0.386907 0.018633      0.463158              0.538857 0.442014    13.739927
+validation_2023 high_exposure_v2         mtdnn_survival 22109    0.167579 0.359453 0.806351 0.233643  1.600802 0.273256      0.500675              0.591518 0.422683    23.654067
+validation_2023 high_exposure_v2                  prior 22109    0.167579 0.167579 0.500000 0.139805  0.453202 0.017581      0.195142              0.211759 0.150459     0.000000
+
+BUDGET LEADERS
+ budget_fraction     split                  model  high_risk_recall  exposure_capture  exposure_ndcg
+            0.01 test_2024    exposure_lambdamart          0.045455          0.112971       0.393316
+            0.02 test_2024   direct_exposure_lgbm          0.096034          0.181382       0.461220
+            0.05 test_2024 hist_gradient_boosting          0.225713          0.312814       0.472574
+            0.10 test_2024    exposure_lambdamart          0.305481          0.441103       0.541400
+            0.20 test_2024       finetuned_minilm          0.573975          0.627037       0.578866
+            0.30 test_2024       finetuned_minilm          0.753565          0.764497       0.634887
+[2026-09-15T15:15:43Z] TORONTO_EXPERTS_DONE
+[2026-09-15T15:15:43Z] NEW_YORK_EXPERTS_START
+{'train': 4540, 'validation': 1487, 'test': 5875}
+'[Errno 99] Cannot assign requested address' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+Retrying in 1s [Retry 1/5].
+'[Errno 99] Cannot assign requested address' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+Retrying in 2s [Retry 2/5].
+'[Errno 99] Cannot assign requested address' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+Retrying in 4s [Retry 3/5].
+'[Errno 99] Cannot assign requested address' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+Retrying in 8s [Retry 4/5].
+Terminated

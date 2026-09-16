@@ -1,0 +1,22 @@
+{
+  "rows": {
+    "train": 142502,
+    "validation": 22109,
+    "test": 25534
+  },
+  "prevalence": {
+    "train": 0.14999789476638925,
+    "validation": 0.1675788140576236,
+    "test": 0.17576564580559254
+  },
+  "fused_dim": 78,
+  "mechanism_dim": 75,
+  "citer_validation_ap": 0.6215062254235587,
+  "citer_weights": {
+    "native_catboost": 0.06837875385330706,
+    "finetuned_minilm": 0.07902131137833958,
+    "conditional_survival": 0.622312623490513,
+    "direct_exposure_lgbm": 0.22515599328066918,
+    "exposure_lambdamart": 0.0051313179971711155
+  }
+}

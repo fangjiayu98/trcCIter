@@ -1,0 +1,9 @@
+.venv/
+.cache/
+__pycache__/
+*.py[cod]
+*.pid
+logs/main_experiment_reproduction.log
+artifacts/toronto_experts/models.joblib
+artifacts/**/*_partial.*
+

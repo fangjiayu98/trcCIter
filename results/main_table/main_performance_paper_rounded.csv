@@ -1,0 +1,19 @@
+city,model,artifact_model_key,n_test,prevalence,AP,Brier,ECE_10,NDCG_top20pct
+Toronto,CITER-MoE-Detect,citer_moe_detect,25534,0.176,0.635,0.104,0.06,0.577
+Toronto,CITER-MoE-Router,citer_moe_stack,25534,0.176,0.63,0.111,0.079,0.634
+Toronto,Conditional survival,conditional_survival,25534,0.176,0.612,0.104,0.036,0.609
+Toronto,CITER-Detect,citer_dynamic_exposure,25534,0.176,0.609,0.102,0.025,0.606
+Toronto,CatBoost,catboost,25534,0.176,0.591,0.105,0.03,0.58
+Toronto,Fine-tuned MiniLM,finetuned_minilm,25534,0.176,0.59,0.105,0.027,0.579
+Toronto,Duration x demand,btm_lgbm_duration,25534,0.176,0.546,0.111,0.025,0.615
+Toronto,CITER-Burden,direct_exposure_lgbm,25534,0.176,0.52,0.117,0.032,0.542
+Toronto,CITER-Rank,exposure_lambdamart,25534,0.176,0.495,0.114,0.035,0.602
+New York,CITER-MoE-Router,citer_moe_stack,5875,0.099,0.621,0.057,0.01,0.616
+New York,CITER-Burden,direct_exposure_lgbm,5875,0.099,0.615,0.059,0.014,0.635
+New York,CITER-Detect,citer_detect,5875,0.099,0.614,0.06,0.028,0.633
+New York,CITER-Rank,exposure_lambdamart,5875,0.099,0.612,0.059,0.014,0.619
+New York,Native CatBoost,native_catboost,5875,0.099,0.601,0.061,0.038,0.606
+New York,Duration x demand,text_structured_lgbm_duration,5875,0.099,0.599,0.06,0.017,0.631
+New York,CITER-MoE-Detect,citer_moe_detect,5875,0.099,0.588,0.072,0.058,0.602
+New York,Multi-task survival,mtdnn_survival,5875,0.099,0.489,0.068,0.012,0.574
+New York,Fine-tuned MiniLM,finetuned_minilm,5875,0.099,0.413,0.134,0.181,0.523
